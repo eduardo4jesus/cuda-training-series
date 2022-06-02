@@ -32,20 +32,30 @@ __global__ void mmul(const float *A, const float *B, float *C, int ds) {
   int idx = threadIdx.x+blockDim.x*blockIdx.x; // create thread x index
   int idy = threadIdx.y+blockDim.y*blockIdx.y; // create thread y index
 
+  /**
+   * NOTICE:
+   * There is a __syncthreads inside an IF statement.
+   * When defining the grid size, the dimension is rounded up, potentially
+   * creating an extra thread block. If so, not all threads will reach the
+   * __syncthreads command, which yields to an undefined behaviour.
+   *
+   * Somehow, in these examples this underfined behavior is not noticed. Maybe
+   * this is due to the DSIZE being multiple of 32 (warp size).
+   */
   if ((idx < ds) && (idy < ds)){
     float temp = 0;
     for (int i = 0; i < ds/block_size; i++) {
 
       // Load data into shared memory
-      As[threadIdx.y][threadIdx.x] = A[FIXME];
-      Bs[threadIdx.y][threadIdx.x] = B[FIXME];
+      As[threadIdx.y][threadIdx.x] = A[idy*ds + block_size*i + threadIdx.x];
+      Bs[threadIdx.y][threadIdx.x] = B[(i*block_size + threadIdx.y)*ds + idx];
 
       // Synchronize
       __syncthreads();
 
       // Keep track of the running sum
       for (int k = 0; k < block_size; k++)
-      	temp += As[FIXME][FIXME] * Bs[FIXME][FIXME]; // dot product of row and column
+        temp += As[threadIdx.y][k] * Bs[k][threadIdx.x]; // dot product of row and column
       __syncthreads();
 
     }
