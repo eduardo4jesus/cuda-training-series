@@ -1,0 +1,32 @@
+==PROF== Connected to process 277986 (/home/edreis/Repo/cuda-training-series/exercises/hw3/vector_add_1b_1024t)
+==PROF== Profiling "vadd" - 1: 0%....50%....100%A[0] = 0.840188
+B[0] = 0.394383
+C[0] = 1.234571
+ - 27 passes
+==PROF== Disconnected from process 277986
+[277986] vector_add_1b_1024t@127.0.0.1
+  vadd(float const *,float const *,float*,int), 2022-Jun-02 19:23:02, Context 1, Stream 7
+    Section: GPU Speed Of Light
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Memory Frequency                                                                   Ghz                           7.19
+    SOL FB                                                                               %                          11.27
+    Elapsed Cycles                                                                   cycle                     16,864,651
+    SM Frequency                                                                       Ghz                           1.30
+    Memory [%]                                                                           %                          12.44
+    Duration                                                                       msecond                          12.93
+    SOL L2                                                                               %                           2.16
+    SM Active Cycles                                                                 cycle                  16,862,810.83
+    SM [%]                                                                               %                           1.24
+    SOL TEX                                                                              %                           1.24
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: Memory Workload Analysis
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Memory Throughput                                                         Gbyte/second                          38.89
+    Mem Busy                                                                             %                          12.44
+    Max Bandwidth                                                                        %                          11.27
+    L2 Hit Rate                                                                          %                          33.33
+    Mem Pipes Busy                                                                       %                          18.66
+    L1 Hit Rate                                                                          %                          33.33
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
