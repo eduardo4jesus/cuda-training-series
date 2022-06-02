@@ -1,0 +1,21 @@
+==PROF== Connected to process 5363 (/home/eduardoj/Repo/cuda-training-series/exercises/hw4/matrix_sums)
+==PROF== Profiling "row_sums" - 0: 0%....50%....100% - 3 passes
+==PROF== Profiling "column_sums" - 1: 0%....50%....100% - 3 passes
+row sums correct!
+column sums correct!
+==PROF== Disconnected from process 5363
+[5363] matrix_sums@127.0.0.1
+  row_sums(const float *, float *, unsigned long), 2022-Jun-02 19:46:42, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                request                      8,388,608
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                  sector                    268,427,291
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+  column_sums(const float *, float *, unsigned long), 2022-Jun-02 19:46:43, Context 1, Stream 7
+    Section: Command line profiler metrics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    l1tex__t_requests_pipe_lsu_mem_global_op_ld.sum                                request                      8,388,608
+    l1tex__t_sectors_pipe_lsu_mem_global_op_ld.sum                                  sector                     33,554,432
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
