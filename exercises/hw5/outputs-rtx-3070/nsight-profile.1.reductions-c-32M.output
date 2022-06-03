@@ -1,0 +1,56 @@
+==PROF== Connected to process 6963 (/home/eduardoj/Repo/cuda-training-series/exercises/hw5/reductions-c-32M)
+==PROF== Profiling "atomic_red" - 0: 0%....50%....100% - 9 passes
+atomic sum reduction incorrect!
+==PROF== Disconnected from process 6963
+==ERROR== The application returned an error code (255).
+[6963] reductions-c-32M@127.0.0.1
+  atomic_red(const float *, float *), 2022-Jun-03 14:28:49, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    DRAM Frequency                                                           cycle/nsecond                           5.99
+    SM Frequency                                                             cycle/usecond                         779.99
+    Elapsed Cycles                                                                   cycle                     95,175,254
+    Memory [%]                                                                           %                           2.07
+    DRAM Throughput                                                                      %                           0.29
+    Duration                                                                       msecond                         122.02
+    L1/TEX Cache Throughput                                                              %                           1.81
+    L2 Cache Throughput                                                                  %                           2.07
+    SM Active Cycles                                                                 cycle                  95,148,675.67
+    Compute (SM) [%]                                                                     %                           0.88
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+          of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+          latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Size                                                                                                        256
+    Function Cache Configuration                                                                  cudaFuncCachePreferNone
+    Grid Size                                                                                                     131,072
+    Registers Per Thread                                                   register/thread                             16
+    Shared Memory Configuration Size                                                 Kbyte                           8.19
+    Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+    Dynamic Shared Memory Per Block                                             byte/block                              0
+    Static Shared Memory Per Block                                              byte/block                              0
+    Threads                                                                         thread                     33,554,432
+    Waves Per SM                                                                                                   546.13
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Limit SM                                                                   block                             16
+    Block Limit Registers                                                            block                             16
+    Block Limit Shared Mem                                                           block                              8
+    Block Limit Warps                                                                block                              6
+    Theoretical Active Warps per SM                                                   warp                             48
+    Theoretical Occupancy                                                                %                            100
+    Achieved Occupancy                                                                   %                          80.84
+    Achieved Active Warps Per SM                                                      warp                          38.80
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+          theoretical (100.0%) and measured achieved occupancy (80.8%) can be the result of warp scheduling overheads   
+          or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+          as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+          (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+          optimizing occupancy.                                                                                         
+

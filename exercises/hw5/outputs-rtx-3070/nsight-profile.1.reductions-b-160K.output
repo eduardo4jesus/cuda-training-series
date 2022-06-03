@@ -1,0 +1,176 @@
+==PROF== Connected to process 6082 (/home/eduardoj/Repo/cuda-training-series/exercises/hw5/reductions-b-160K)
+==PROF== Profiling "atomic_red" - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "reduce_a(float *, float *)" - 1: 0%....50%....100% - 9 passes
+==PROF== Profiling "reduce_ws(float *, float *)" - 2: 0%....50%....100% - 9 passes
+atomic sum reduction correct!
+reduction w/atomic sum correct!
+reduction warp shuffle sum correct!
+==PROF== Disconnected from process 6082
+[6082] reductions-b-160K@127.0.0.1
+  atomic_red(const float *, float *), 2022-Jun-03 13:47:43, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      DRAM Frequency                                                           cycle/nsecond                           5.98
+      SM Frequency                                                             cycle/usecond                         778.09
+      Elapsed Cycles                                                                   cycle                        467,352
+      Memory [%]                                                                           %                           2.06
+      DRAM Throughput                                                                      %                           0.29
+      Duration                                                                       usecond                         600.64
+      L1/TEX Cache Throughput                                                              %                           1.79
+      L2 Cache Throughput                                                                  %                           2.06
+      SM Active Cycles                                                                 cycle                     446,865.25
+      Compute (SM) [%]                                                                     %                           0.88
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+            of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+            latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Size                                                                                                        256
+      Function Cache Configuration                                                                  cudaFuncCachePreferNone
+      Grid Size                                                                                                         640
+      Registers Per Thread                                                   register/thread                             16
+      Shared Memory Configuration Size                                                 Kbyte                           8.19
+      Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+      Dynamic Shared Memory Per Block                                             byte/block                              0
+      Static Shared Memory Per Block                                              byte/block                              0
+      Threads                                                                         thread                        163,840
+      Waves Per SM                                                                                                     2.67
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   A wave of thread blocks is defined as the maximum number of blocks that can be executed in parallel on the    
+            target GPU. The number of blocks in a wave depends on the number of multiprocessors and the theoretical       
+            occupancy of the kernel. This kernel launch results in 2 full waves and a partial wave of 159 thread blocks.  
+            Under the assumption of a uniform execution duration of all thread blocks, the partial wave may account for   
+            up to 33.3% of the total kernel runtime with a lower occupancy of 29.3%. Try launching a grid with no         
+            partial wave. The overall impact of this tail effect also lessens with the number of full waves executed for  
+            a grid. See the Hardware Model                                                                                
+            (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model) description for more      
+            details on launch configurations.                                                                             
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Limit SM                                                                   block                             16
+      Block Limit Registers                                                            block                             16
+      Block Limit Shared Mem                                                           block                              8
+      Block Limit Warps                                                                block                              6
+      Theoretical Active Warps per SM                                                   warp                             48
+      Theoretical Occupancy                                                                %                            100
+      Achieved Occupancy                                                                   %                          70.70
+      Achieved Active Warps Per SM                                                      warp                          33.93
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+            theoretical (100.0%) and measured achieved occupancy (70.7%) can be the result of warp scheduling overheads   
+            or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+            as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+            (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+            optimizing occupancy.                                                                                         
+
+  reduce_a(float *, float *), 2022-Jun-03 13:47:43, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      DRAM Frequency                                                           cycle/nsecond                           5.44
+      SM Frequency                                                             cycle/usecond                         709.44
+      Elapsed Cycles                                                                   cycle                         11,196
+      Memory [%]                                                                           %                          64.62
+      DRAM Throughput                                                                      %                          11.94
+      Duration                                                                       usecond                          15.78
+      L1/TEX Cache Throughput                                                              %                          77.32
+      L2 Cache Throughput                                                                  %                           5.85
+      SM Active Cycles                                                                 cycle                       9,353.20
+      Compute (SM) [%]                                                                     %                          64.62
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      INF   Compute and Memory are well-balanced: To reduce runtime, both computation and memory traffic must be reduced. 
+            Check both the Compute Workload Analysis and Memory Workload Analysis sections.                               
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Size                                                                                                        256
+      Function Cache Configuration                                                                  cudaFuncCachePreferNone
+      Grid Size                                                                                                         640
+      Registers Per Thread                                                   register/thread                             16
+      Shared Memory Configuration Size                                                 Kbyte                          16.38
+      Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+      Dynamic Shared Memory Per Block                                             byte/block                              0
+      Static Shared Memory Per Block                                             Kbyte/block                           1.02
+      Threads                                                                         thread                        163,840
+      Waves Per SM                                                                                                     2.67
+      ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Limit SM                                                                   block                             16
+      Block Limit Registers                                                            block                             16
+      Block Limit Shared Mem                                                           block                              8
+      Block Limit Warps                                                                block                              6
+      Theoretical Active Warps per SM                                                   warp                             48
+      Theoretical Occupancy                                                                %                            100
+      Achieved Occupancy                                                                   %                          84.23
+      Achieved Active Warps Per SM                                                      warp                          40.43
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+            theoretical (100.0%) and measured achieved occupancy (84.2%) can be the result of warp scheduling overheads   
+            or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+            as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+            (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+            optimizing occupancy.                                                                                         
+
+  reduce_ws(float *, float *), 2022-Jun-03 13:47:43, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      DRAM Frequency                                                           cycle/nsecond                           5.27
+      SM Frequency                                                             cycle/usecond                         688.94
+      Elapsed Cycles                                                                   cycle                          7,346
+      Memory [%]                                                                           %                          30.95
+      DRAM Throughput                                                                      %                          18.23
+      Duration                                                                       usecond                          10.66
+      L1/TEX Cache Throughput                                                              %                          41.65
+      L2 Cache Throughput                                                                  %                           8.91
+      SM Active Cycles                                                                 cycle                       5,455.55
+      Compute (SM) [%]                                                                     %                          36.01
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   This kernel exhibits low compute throughput and memory bandwidth utilization relative to the peak performance 
+            of this device. Achieved compute throughput and/or memory bandwidth below 60.0% of peak typically indicate    
+            latency issues. Look at Scheduler Statistics and Warp State Statistics for potential reasons.                 
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Size                                                                                                        256
+      Function Cache Configuration                                                                  cudaFuncCachePreferNone
+      Grid Size                                                                                                         640
+      Registers Per Thread                                                   register/thread                             16
+      Shared Memory Configuration Size                                                 Kbyte                          16.38
+      Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+      Dynamic Shared Memory Per Block                                             byte/block                              0
+      Static Shared Memory Per Block                                              byte/block                            128
+      Threads                                                                         thread                        163,840
+      Waves Per SM                                                                                                     2.67
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   A wave of thread blocks is defined as the maximum number of blocks that can be executed in parallel on the    
+            target GPU. The number of blocks in a wave depends on the number of multiprocessors and the theoretical       
+            occupancy of the kernel. This kernel launch results in 2 full waves and a partial wave of 159 thread blocks.  
+            Under the assumption of a uniform execution duration of all thread blocks, the partial wave may account for   
+            up to 33.3% of the total kernel runtime with a lower occupancy of 30.6%. Try launching a grid with no         
+            partial wave. The overall impact of this tail effect also lessens with the number of full waves executed for  
+            a grid. See the Hardware Model                                                                                
+            (https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#metrics-hw-model) description for more      
+            details on launch configurations.                                                                             
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+      Block Limit SM                                                                   block                             16
+      Block Limit Registers                                                            block                             16
+      Block Limit Shared Mem                                                           block                             14
+      Block Limit Warps                                                                block                              6
+      Theoretical Active Warps per SM                                                   warp                             48
+      Theoretical Occupancy                                                                %                            100
+      Achieved Occupancy                                                                   %                          69.36
+      Achieved Active Warps Per SM                                                      warp                          33.29
+      ---------------------------------------------------------------------- --------------- ------------------------------
+      WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+            theoretical (100.0%) and measured achieved occupancy (69.4%) can be the result of warp scheduling overheads   
+            or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+            as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+            (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+            optimizing occupancy.                                                                                         
+
