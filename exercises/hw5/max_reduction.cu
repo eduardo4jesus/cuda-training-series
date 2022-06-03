@@ -27,7 +27,7 @@ __global__ void reduce(float *gdata, float *out, size_t n)
 
     while (idx < n)
     { // grid stride loop to load data
-        sdata[tid] += gdata[idx];
+        sdata[tid] = max(sdata[tid], gdata[idx]);
         idx += gridDim.x * blockDim.x;
     }
 
@@ -35,7 +35,7 @@ __global__ void reduce(float *gdata, float *out, size_t n)
     {
         __syncthreads();
         if (tid < s) // parallel sweep reduction
-            sdata[tid] += sdata[tid + s];
+            sdata[tid] = max(sdata[tid], sdata[tid + s]);
     }
     if (tid == 0)
         out[blockIdx.x] = sdata[0];
