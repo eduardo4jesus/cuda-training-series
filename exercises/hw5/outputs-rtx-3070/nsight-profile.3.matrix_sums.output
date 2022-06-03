@@ -1,0 +1,105 @@
+==PROF== Connected to process 12169 (/home/eduardoj/Repo/cuda-training-series/exercises/hw5/matrix_sums)
+==PROF== Profiling "row_sums" - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "column_sums" - 1: 0%....50%....100% - 9 passes
+row sums correct!
+column sums correct!
+==PROF== Disconnected from process 12169
+[12169] matrix_sums@127.0.0.1
+  row_sums(const float *, float *, unsigned long), 2022-Jun-03 16:58:02, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    DRAM Frequency                                                           cycle/nsecond                           5.98
+    SM Frequency                                                             cycle/usecond                         778.67
+    Elapsed Cycles                                                                   cycle                      2,367,844
+    Memory [%]                                                                           %                          92.20
+    DRAM Throughput                                                                      %                          92.20
+    Duration                                                                       msecond                           3.04
+    L1/TEX Cache Throughput                                                              %                          35.53
+    L2 Cache Throughput                                                                  %                          41.90
+    SM Active Cycles                                                                 cycle                   2,361,156.67
+    Compute (SM) [%]                                                                     %                          30.47
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    INF   The kernel is utilizing greater than 80.0% of the available compute or memory performance of the device. To   
+          further improve performance, work will likely need to be shifted from the most utilized to another unit.      
+          Start by analyzing DRAM in the Memory Workload Analysis section.                                              
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Size                                                                                                        256
+    Function Cache Configuration                                                                  cudaFuncCachePreferNone
+    Grid Size                                                                                                      16,384
+    Registers Per Thread                                                   register/thread                             16
+    Shared Memory Configuration Size                                                 Kbyte                          16.38
+    Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+    Dynamic Shared Memory Per Block                                             byte/block                              0
+    Static Shared Memory Per Block                                             Kbyte/block                           1.02
+    Threads                                                                         thread                      4,194,304
+    Waves Per SM                                                                                                    68.27
+    ---------------------------------------------------------------------- --------------- ------------------------------
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Limit SM                                                                   block                             16
+    Block Limit Registers                                                            block                             16
+    Block Limit Shared Mem                                                           block                              8
+    Block Limit Warps                                                                block                              6
+    Theoretical Active Warps per SM                                                   warp                             48
+    Theoretical Occupancy                                                                %                            100
+    Achieved Occupancy                                                                   %                          98.87
+    Achieved Active Warps Per SM                                                      warp                          47.46
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    INF   This kernel's theoretical occupancy is not impacted by any block limit.                                       
+
+  column_sums(const float *, float *, unsigned long), 2022-Jun-03 16:58:02, Context 1, Stream 7
+    Section: GPU Speed Of Light Throughput
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    DRAM Frequency                                                           cycle/nsecond                           5.99
+    SM Frequency                                                             cycle/usecond                         779.31
+    Elapsed Cycles                                                                   cycle                      2,350,677
+    Memory [%]                                                                           %                          92.89
+    DRAM Throughput                                                                      %                          92.89
+    Duration                                                                       msecond                           3.02
+    L1/TEX Cache Throughput                                                              %                          36.48
+    L2 Cache Throughput                                                                  %                          42.19
+    SM Active Cycles                                                                 cycle                   2,299,641.95
+    Compute (SM) [%]                                                                     %                          17.85
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    INF   The kernel is utilizing greater than 80.0% of the available compute or memory performance of the device. To   
+          further improve performance, work will likely need to be shifted from the most utilized to another unit.      
+          Start by analyzing DRAM in the Memory Workload Analysis section.                                              
+
+    Section: Launch Statistics
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Size                                                                                                        256
+    Function Cache Configuration                                                                  cudaFuncCachePreferNone
+    Grid Size                                                                                                          64
+    Registers Per Thread                                                   register/thread                             22
+    Shared Memory Configuration Size                                                 Kbyte                           8.19
+    Driver Shared Memory Per Block                                             Kbyte/block                           1.02
+    Dynamic Shared Memory Per Block                                             byte/block                              0
+    Static Shared Memory Per Block                                              byte/block                              0
+    Threads                                                                         thread                         16,384
+    Waves Per SM                                                                                                     0.27
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   If you execute __syncthreads() to synchronize the threads of a block, it is recommended to have more than the 
+          achieved 1 blocks per multiprocessor. This way, blocks that aren't waiting for __syncthreads() can keep the   
+          hardware busy.                                                                                                
+
+    Section: Occupancy
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    Block Limit SM                                                                   block                             16
+    Block Limit Registers                                                            block                             10
+    Block Limit Shared Mem                                                           block                              8
+    Block Limit Warps                                                                block                              6
+    Theoretical Active Warps per SM                                                   warp                             48
+    Theoretical Occupancy                                                                %                            100
+    Achieved Occupancy                                                                   %                          26.59
+    Achieved Active Warps Per SM                                                      warp                          12.76
+    ---------------------------------------------------------------------- --------------- ------------------------------
+    WRN   This kernel's theoretical occupancy is not impacted by any block limit. The difference between calculated     
+          theoretical (100.0%) and measured achieved occupancy (26.6%) can be the result of warp scheduling overheads   
+          or workload imbalances during the kernel execution. Load imbalances can occur between warps within a block    
+          as well as across blocks of the same kernel. See the CUDA Best Practices Guide                                
+          (https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy) for more details on           
+          optimizing occupancy.                                                                                         
+

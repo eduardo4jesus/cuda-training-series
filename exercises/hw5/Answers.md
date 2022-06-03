@@ -107,3 +107,17 @@ b. I have no idea! =(
 
 # Part 2
 
+Done quite quickly.
+
+# Part 3
+
+I had two implementations:
+  - `row_sums_slow`. This was my first attempt. I got a correct output in the
+  first try. However the Duration increased (30+ msecond). I was too tired to
+  wonder why. Then, I just keep reading the `readme.md` where I noticed it
+  included tips on how to get to a good solution, described next.
+  - `row_sums`. My second attempt. Coding was quite fast. However I had the
+  wrong output, so it took me sometime to debug it. The issues I had is that I
+  didn't consider one of the tips (highlighted below) properly, at first.
+    - One block per row -> Block-loop
+    - **Change kernel launching parameters**
