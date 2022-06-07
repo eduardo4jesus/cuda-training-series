@@ -61,6 +61,13 @@ the bottle neck is something other than *Achived Occupancy*.
 c. I either messed up my calculation for *Attained Memory Bandwidth*, or the
 computed metric is regarding *Device to Device* bandwidth.
 
+> PS2: From the exercise walk-through we have that,
+>
+> The grid-stride loop is comon for both approachs, and it will occour that if
+the data is way bigger than what the grid can handle, the grid-stride will take
+most of the computation. Thus, making both kernels similar on their heaviest
+load and dominating the gain from the warp suffle approach.
+
 ## Instruction 2
 
 > Now edit the code to change *N* from ~8M to 163840 (=640*256)
