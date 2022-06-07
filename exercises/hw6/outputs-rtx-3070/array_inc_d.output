@@ -1,0 +1,78 @@
+mismatch at 0, was: 10000, expected: 1
+Generating '/tmp/nsys-report-e7ef.qdstrm'
+[1/8] [0%                          ] array_inc_d.nsys-rep[1/8] [0%                          ] array_inc_d.nsys-rep[1/8] [8%                          ] array_inc_d.nsys-rep[1/8] [=16%                        ] array_inc_d.nsys-rep[1/8] [9%                          ] array_inc_d.nsys-rep[1/8] [6%                          ] array_inc_d.nsys-rep[1/8] [4%                          ] array_inc_d.nsys-rep[1/8] [5%                          ] array_inc_d.nsys-rep[1/8] [==21%                       ] array_inc_d.nsys-rep[1/8] [=======37%                  ] array_inc_d.nsys-rep[1/8] [===========53%              ] array_inc_d.nsys-rep[1/8] [================69%         ] array_inc_d.nsys-rep[1/8] [==================78%       ] array_inc_d.nsys-rep[1/8] [========================100%] array_inc_d.nsys-rep[1/8] [========================100%] array_inc_d.nsys-rep
+[2/8] [0%                          ] array_inc_d.sqlite[2/8] [1%                          ] array_inc_d.sqlite[2/8] [2%                          ] array_inc_d.sqlite[2/8] [3%                          ] array_inc_d.sqlite[2/8] [4%                          ] array_inc_d.sqlite[2/8] [5%                          ] array_inc_d.sqlite[2/8] [6%                          ] array_inc_d.sqlite[2/8] [7%                          ] array_inc_d.sqlite[2/8] [8%                          ] array_inc_d.sqlite[2/8] [9%                          ] array_inc_d.sqlite[2/8] [10%                         ] array_inc_d.sqlite[2/8] [11%                         ] array_inc_d.sqlite[2/8] [12%                         ] array_inc_d.sqlite[2/8] [13%                         ] array_inc_d.sqlite[2/8] [14%                         ] array_inc_d.sqlite[2/8] [=15%                        ] array_inc_d.sqlite[2/8] [=16%                        ] array_inc_d.sqlite[2/8] [=17%                        ] array_inc_d.sqlite[2/8] [==18%                       ] array_inc_d.sqlite[2/8] [==19%                       ] array_inc_d.sqlite[2/8] [==20%                       ] array_inc_d.sqlite[2/8] [==21%                       ] array_inc_d.sqlite[2/8] [===22%                      ] array_inc_d.sqlite[2/8] [===23%                      ] array_inc_d.sqlite[2/8] [===24%                      ] array_inc_d.sqlite[2/8] [====25%                     ] array_inc_d.sqlite[2/8] [====26%                     ] array_inc_d.sqlite[2/8] [====27%                     ] array_inc_d.sqlite[2/8] [====28%                     ] array_inc_d.sqlite[2/8] [=====29%                    ] array_inc_d.sqlite[2/8] [=====30%                    ] array_inc_d.sqlite[2/8] [=====31%                    ] array_inc_d.sqlite[2/8] [=====32%                    ] array_inc_d.sqlite[2/8] [======33%                   ] array_inc_d.sqlite[2/8] [======34%                   ] array_inc_d.sqlite[2/8] [======35%                   ] array_inc_d.sqlite[2/8] [=======36%                  ] array_inc_d.sqlite[2/8] [=======37%                  ] array_inc_d.sqlite[2/8] [=======38%                  ] array_inc_d.sqlite[2/8] [=======39%                  ] array_inc_d.sqlite[2/8] [========40%                 ] array_inc_d.sqlite[2/8] [========41%                 ] array_inc_d.sqlite[2/8] [========42%                 ] array_inc_d.sqlite[2/8] [=========43%                ] array_inc_d.sqlite[2/8] [=========44%                ] array_inc_d.sqlite[2/8] [=========45%                ] array_inc_d.sqlite[2/8] [=========46%                ] array_inc_d.sqlite[2/8] [==========47%               ] array_inc_d.sqlite[2/8] [==========48%               ] array_inc_d.sqlite[2/8] [==========49%               ] array_inc_d.sqlite[2/8] [===========50%              ] array_inc_d.sqlite[2/8] [===========51%              ] array_inc_d.sqlite[2/8] [===========52%              ] array_inc_d.sqlite[2/8] [===========53%              ] array_inc_d.sqlite[2/8] [============54%             ] array_inc_d.sqlite[2/8] [============55%             ] array_inc_d.sqlite[2/8] [============56%             ] array_inc_d.sqlite[2/8] [============57%             ] array_inc_d.sqlite[2/8] [=============58%            ] array_inc_d.sqlite[2/8] [=============59%            ] array_inc_d.sqlite[2/8] [=============60%            ] array_inc_d.sqlite[2/8] [==============61%           ] array_inc_d.sqlite[2/8] [==============62%           ] array_inc_d.sqlite[2/8] [==============63%           ] array_inc_d.sqlite[2/8] [==============64%           ] array_inc_d.sqlite[2/8] [===============65%          ] array_inc_d.sqlite[2/8] [===============66%          ] array_inc_d.sqlite[2/8] [===============67%          ] array_inc_d.sqlite[2/8] [================68%         ] array_inc_d.sqlite[2/8] [================69%         ] array_inc_d.sqlite[2/8] [================70%         ] array_inc_d.sqlite[2/8] [================71%         ] array_inc_d.sqlite[2/8] [=================72%        ] array_inc_d.sqlite[2/8] [=================73%        ] array_inc_d.sqlite[2/8] [=================74%        ] array_inc_d.sqlite[2/8] [==================75%       ] array_inc_d.sqlite[2/8] [==================76%       ] array_inc_d.sqlite[2/8] [==================77%       ] array_inc_d.sqlite[2/8] [==================78%       ] array_inc_d.sqlite[2/8] [===================79%      ] array_inc_d.sqlite[2/8] [===================80%      ] array_inc_d.sqlite[2/8] [===================81%      ] array_inc_d.sqlite[2/8] [===================82%      ] array_inc_d.sqlite[2/8] [====================83%     ] array_inc_d.sqlite[2/8] [====================84%     ] array_inc_d.sqlite[2/8] [====================85%     ] array_inc_d.sqlite[2/8] [=====================86%    ] array_inc_d.sqlite[2/8] [=====================87%    ] array_inc_d.sqlite[2/8] [=====================88%    ] array_inc_d.sqlite[2/8] [=====================89%    ] array_inc_d.sqlite[2/8] [======================90%   ] array_inc_d.sqlite[2/8] [======================91%   ] array_inc_d.sqlite[2/8] [======================92%   ] array_inc_d.sqlite[2/8] [=======================93%  ] array_inc_d.sqlite[2/8] [=======================94%  ] array_inc_d.sqlite[2/8] [=======================95%  ] array_inc_d.sqlite[2/8] [=======================96%  ] array_inc_d.sqlite[2/8] [========================97% ] array_inc_d.sqlite[2/8] [========================98% ] array_inc_d.sqlite[2/8] [========================99% ] array_inc_d.sqlite[2/8] [========================100%] array_inc_d.sqlite[2/8] [========================100%] array_inc_d.sqlite
+[3/8] Executing 'nvtxsum' stats report
+[4/8] Executing 'osrtsum' stats report
+
+Operating System Runtime API Statistics:
+
+ Time (%)  Total Time (ns)  Num Calls     Avg (ns)        Med (ns)      Min (ns)      Max (ns)       StdDev (ns)             Name         
+ --------  ---------------  ---------  ---------------  -------------  -----------  -------------  ---------------  ----------------------
+     44.6   16,163,175,344        829     19,497,195.8   10,053,691.0        1,381    100,185,382     27,603,629.0  poll                  
+     27.5    9,961,802,525          5  1,992,360,505.0   60,609,790.0      185,509  9,004,615,794  3,938,002,834.6  sem_wait              
+     23.5    8,501,259,251         17    500,074,073.6  500,059,608.0  500,053,838    500,143,465         24,638.5  pthread_cond_timedwait
+      4.2    1,536,037,142        737      2,084,175.2    2,052,300.0        4,205     20,799,063        968,302.2  sem_timedwait         
+      0.2       81,319,404        435        186,941.2        7,242.0        1,001     29,714,590      1,953,540.3  ioctl                 
+      0.0          865,547         27         32,057.3        2,099.0        1,214        609,120        116,041.1  mmap64                
+      0.0          251,857         44          5,724.0        5,937.0        1,596         13,610          1,906.7  open64                
+      0.0          138,440          1        138,440.0      138,440.0      138,440        138,440              0.0  pthread_mutex_lock    
+      0.0          128,472          6         21,412.0       19,740.0       14,593         35,625          7,529.5  pthread_create        
+      0.0           83,697         37          2,262.1        1,801.0        1,016          9,634          1,560.6  fopen                 
+      0.0           78,523         13          6,040.2        4,855.0        1,209         26,781          6,642.8  mmap                  
+      0.0           50,454          6          8,409.0        5,170.0        2,412         25,818          8,948.6  fgets                 
+      0.0           18,370          7          2,624.3        2,437.0        1,377          4,109          1,017.6  write                 
+      0.0           15,635          5          3,127.0        2,740.0        1,182          5,906          1,767.3  open                  
+      0.0           14,846          6          2,474.3        1,982.0        1,488          5,206          1,366.4  munmap                
+      0.0           12,972          6          2,162.0        1,802.5        1,271          4,534          1,223.2  fread                 
+      0.0            7,111          2          3,555.5        3,555.5        2,201          4,910          1,915.6  socket                
+      0.0            6,019          1          6,019.0        6,019.0        6,019          6,019              0.0  connect               
+      0.0            5,967          4          1,491.8        1,063.5        1,024          2,816            883.1  fclose                
+      0.0            5,363          4          1,340.8        1,325.5        1,213          1,499            124.5  read                  
+      0.0            4,433          1          4,433.0        4,433.0        4,433          4,433              0.0  pipe2                 
+      0.0            4,341          1          4,341.0        4,341.0        4,341          4,341              0.0  fflush                
+      0.0            1,971          1          1,971.0        1,971.0        1,971          1,971              0.0  fcntl                 
+      0.0            1,917          1          1,917.0        1,917.0        1,917          1,917              0.0  fopen64               
+      0.0            1,223          1          1,223.0        1,223.0        1,223          1,223              0.0  bind                  
+
+[5/8] Executing 'cudaapisum' stats report
+
+CUDA API Statistics:
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)       Med (ns)      Min (ns)     Max (ns)    StdDev (ns)            Name         
+ --------  ---------------  ---------  -------------  -------------  -----------  -----------  ------------  ----------------------
+     88.4    7,811,058,351     10,000      781,105.8      869,076.0        1,786    1,014,185     263,229.7  cudaLaunchKernel      
+     10.4      915,914,128          1  915,914,128.0  915,914,128.0  915,914,128  915,914,128           0.0  cudaDeviceSynchronize 
+      0.9       81,274,299          1   81,274,299.0   81,274,299.0   81,274,299   81,274,299           0.0  cudaMallocManaged     
+      0.3       30,625,834          2   15,312,917.0   15,312,917.0      877,093   29,748,741  20,415,338.1  cudaMemPrefetchAsync  
+      0.0              929          1          929.0          929.0          929          929           0.0  cuModuleGetLoadingMode
+
+[6/8] Executing 'gpukernsum' stats report
+
+CUDA Kernel Statistics:
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)            Name           
+ --------  ---------------  ---------  ---------  ---------  --------  --------  -----------  -------------------------
+    100.0    8,694,795,789     10,000  869,479.6  869,056.5   858,912   892,736      4,040.7  inc(int *, unsigned long)
+
+[7/8] Executing 'gpumemtimesum' stats report
+
+CUDA Memory Operation Statistics (by time):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)   Med (ns)   Min (ns)  Max (ns)  StdDev (ns)              Operation            
+ --------  ---------------  -----  ---------  ---------  --------  --------  -----------  ---------------------------------
+     52.7       29,131,078     64  455,173.1  455,088.0   444,448   475,648      7,805.1  [CUDA Unified Memory memcpy HtoD]
+     47.3       26,104,859     64  407,888.4  408,192.0   398,368   420,511      4,427.4  [CUDA Unified Memory memcpy DtoH]
+
+[8/8] Executing 'gpumemsizesum' stats report
+
+CUDA Memory Operation Statistics (by size):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)              Operation            
+ ----------  -----  --------  --------  --------  --------  -----------  ---------------------------------
+    134.218     64     2.097     2.097     2.097     2.097        0.000  [CUDA Unified Memory memcpy DtoH]
+    134.218     64     2.097     2.097     2.097     2.097        0.000  [CUDA Unified Memory memcpy HtoD]
+
+Generated:
+    /home/eduardoj/Repo/cuda-training-series/exercises/hw6/outputs-rtx-3070/array_inc_d.nsys-rep
+    /home/eduardoj/Repo/cuda-training-series/exercises/hw6/outputs-rtx-3070/array_inc_d.sqlite

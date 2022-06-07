@@ -37,7 +37,7 @@ int main(){
   cudaCheckErrors("cudaMalloc Error");
   memset(h_array, 0, ds_bytes);
   cudaMemPrefetchAsync(h_array, ds_bytes, 0); // Copy to device
-  inc<<<256, 256>>>(h_array, ds);
+  for (int i=0; i < 10000; i++) inc<<<256, 256>>>(h_array, ds);
   cudaCheckErrors("kernel launch error");
   cudaMemPrefetchAsync(h_array, ds_bytes, cudaCpuDeviceId); // Copy back to host
   cudaDeviceSynchronize();
