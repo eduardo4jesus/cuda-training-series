@@ -15,6 +15,7 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 
 #ifdef DEBUG
 #define CUDA_CALL(F)  if( (F) != cudaSuccess ) \
@@ -41,24 +42,53 @@
 
 #define INDX( row, col, ld ) ( ( (col) * (ld) ) + (row) )
 
-/* CUDA kernel for naive matrix transpose */
+/* CUDA kernel for shared memory matrix transpose */
 
-__global__ void naive_cuda_transpose( const int m, 
-                                      const double * const a, 
-                                      double * const c )
+__global__ void smem_cuda_transpose( const int m, 
+                                     double const * const a, 
+                                     double * const c )
 {
-  const int myRow = blockDim.x*blockIdx.x + threadIdx.x;
-  const int myCol = blockDim.y*blockIdx.y + threadIdx.y;
+	
+/* declare a shared memory array */
+
+  __shared__ double smemArray[THREADS_PER_BLOCK_X][THREADS_PER_BLOCK_Y];
+	
+/* determine my row and column indices for the error checking code */
+
+  const int myRow = blockDim.x * blockIdx.x + threadIdx.x;
+  const int myCol = blockDim.y * blockIdx.y + threadIdx.y;
+
+/* determine my row tile and column tile index */
+
+  const int tileX = blockDim.x * blockIdx.x;
+  const int tileY = blockDim.y * blockIdx.y;
 
   if( myRow < m && myCol < m )
   {
-    c[INDX(myRow, myCol, m)] = a[INDX(myCol, myRow, m)];
+/* read to the shared mem array */
+/* HINT: threadIdx.x should appear somewhere in the first argument to */
+/* your INDX calculation for both a[] and c[].  This will ensure proper */
+/* coalescing. */
+
+    /** Transposing on STORE */
+    smemArray[threadIdx.y][threadIdx.x] =
+      a[INDX(tileX+threadIdx.x, tileY+threadIdx.y, m)];
+  } /* end if */
+
+/* synchronize */
+  __syncthreads();
+		
+  if( myRow < m && myCol < m )
+  {
+/* write the result */
+    c[INDX(tileY+threadIdx.x, tileX+threadIdx.y, m)] =
+      smemArray[threadIdx.x][threadIdx.y];
   } /* end if */
   return;
 
-} /* end naive_cuda_transpose */
+} /* end smem_cuda_transpose */
 
-void host_transpose( const int m, const double * const a, double *c )
+void host_transpose( const int m, double const * const a, double * const c )
 {
 	
 /* 
@@ -68,9 +98,9 @@ void host_transpose( const int m, const double * const a, double *c )
   for( int j = 0; j < m; j++ )
   {
     for( int i = 0; i < m; i++ )
-      {
-        c[INDX(i,j,m)] = a[INDX(j,i,m)];
-      } /* end for i */
+    {
+      c[INDX(i,j,m)] = a[INDX(j,i,m)];
+    } /* end for i */
   } /* end for j */
 
 } /* end host_dgemm */
@@ -123,7 +153,7 @@ int main( int argc, char *argv[] )
   for( int i = 0; i < size * size; i++ )
   {
     h_a[i] = double( rand() ) / ( double(RAND_MAX) + 1.0 );
-  }
+  } /* end for */
 
 /* copy input matrix from host to device */
 
@@ -157,15 +187,16 @@ int main( int argc, char *argv[] )
 /* setup threadblock size and grid sizes */
 
   dim3 threads( THREADS_PER_BLOCK_X, THREADS_PER_BLOCK_Y, 1 );
-  dim3 blocks((SIZE + THREADS_PER_BLOCK_X - 1)/THREADS_PER_BLOCK_X, (SIZE + THREADS_PER_BLOCK_Y - 1)/THREADS_PER_BLOCK_Y, 1 );
+  dim3 blocks( ( size / THREADS_PER_BLOCK_X ) + 1, 
+               ( size / THREADS_PER_BLOCK_Y ) + 1, 1 );
 
 /* start timers */
   CUDA_CALL( cudaEventRecord( start, 0 ) );
 
-/* call naive GPU transpose kernel */
+/* call smem GPU transpose kernel */
 
-  naive_cuda_transpose<<< blocks, threads >>>( size, d_a, d_c );
-  CUDA_CHECK()
+  smem_cuda_transpose<<< blocks, threads >>>( size, d_a, d_c );
+  CUDA_CHECK();
   CUDA_CALL( cudaDeviceSynchronize() );
 
 /* stop the timers */
@@ -199,7 +230,7 @@ int main( int argc, char *argv[] )
                                       h_a[INDX(i,j,size)]);
         printf("FAIL\n");
         goto end;
-      } /* end fi */
+      }
     } /* end for i */
   } /* end for j */
 
@@ -211,7 +242,8 @@ int main( int argc, char *argv[] )
   free( h_c );
   CUDA_CALL( cudaFree( d_a ) );
   CUDA_CALL( cudaFree( d_c ) );
+
   CUDA_CALL( cudaDeviceReset() );
 
   return 0;
-} /* end main */
+}

@@ -1,0 +1,7 @@
+Matrix size is 4096
+Total memory required per matrix is 134.217728 MB
+Total time CPU is 0.256025 sec
+Performance is 1.048475 GB/s
+Total time GPU is 0.000862 sec
+Performance is 311.450512 GB/s
+PASS
